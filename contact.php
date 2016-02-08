@@ -4,7 +4,7 @@
         $email = $_POST['email'];
         $message = $_POST['message'];
         $human = intval($_POST['human']);
-        $from = 'Demo Contact Form'; 
+        $from = 'Debate Website Contact Form'; 
         $to = 'ksharm01@gmail.com'; 
         $subject = 'Message from Contact Demo ';
         
@@ -29,7 +29,7 @@
         }
 // If there are no errors, send the email
 if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
-    if (mail ($to, $subject, $body, $from)) {
+    if (mail ($to, $subject, $body)) {
         $result='<div class="alert alert-success">Thank You! I will be in touch</div>';
     } else {
         $result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later.</div>';
