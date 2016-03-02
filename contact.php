@@ -90,9 +90,6 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
                         <a href="forms.html">Forms</a>
                     </li>
                     <li>
-                        <a href="research.html">Research</a>
-                    </li>
-                    <li>
                         <a href="contact.php">Contact</a>
                     </li>
                 </ul>
