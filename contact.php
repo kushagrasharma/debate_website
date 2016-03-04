@@ -2,7 +2,7 @@
     if (isset($_POST["submit"])) {
         $name = $_POST['name'];
         $email = $_POST['email'];
-        $subject = 'Hello';//$_POST['subject'];
+        $subject = $_POST['subject'];
         $message = $_POST['message'];
         $human = intval($_POST['human']);
         $from = 'Debate Website Contact Form'; 
@@ -32,7 +32,7 @@
             $errHuman = 'Your anti-spam is incorrect';
         }
 // If there are no errors, send the email
-if (!$errName && !$errSubject !$errEmail && !$errMessage && !$errHuman) {
+if (!$errName && !$errSubject && !$errEmail && !$errMessage && !$errHuman) {
     if (mail ($to, $subject, $body)) {
         $result='<div class="alert alert-success">Thank You! I will be in touch</div>';
     } else {
