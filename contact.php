@@ -2,16 +2,20 @@
     if (isset($_POST["submit"])) {
         $name = $_POST['name'];
         $email = $_POST['email'];
+        $subject = $_POST['subject']
         $message = $_POST['message'];
         $human = intval($_POST['human']);
         $from = 'Debate Website Contact Form'; 
         $to = 'ksharm01@gmail.com'; 
-        $subject = 'Message from Contact Demo ';
         
-        $body ="From: $name\n E-Mail: $email\n Message:\n $message";
+        $body ="From: $name\n Subject: $subject \n E-Mail: $email\n Message:\n $message";
         // Check if name has been entered
         if (!$_POST['name']) {
             $errName = 'Please enter your name';
+        }
+
+        if (!$_POST['subject']) {
+            $errName = 'Please enter the subject';
         }
         
         // Check if email has been entered and is valid
@@ -115,6 +119,13 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
                         <div class="col-sm-10">
                             <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="<?php echo htmlspecialchars($_POST['email']); ?>">
                             <?php echo "<p class='text-danger'>$errEmail</p>";?>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="col-sm-2 control-label">2 + 3 = ?</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="human" name="human" placeholder="I'd Like To Join!">
+                            <?php echo "<p class='text-danger'>$errHuman</p>";?>
                         </div>
                     </div>
                     <div class="form-group">
