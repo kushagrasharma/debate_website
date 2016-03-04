@@ -2,7 +2,7 @@
     if (isset($_POST["submit"])) {
         $name = $_POST['name'];
         $email = $_POST['email'];
-        $subject = $_POST['subject'];
+        $subject = 'Hello';//$_POST['subject'];
         $message = $_POST['message'];
         $human = intval($_POST['human']);
         $from = 'Debate Website Contact Form'; 
