@@ -2,14 +2,13 @@
     if (isset($_POST["submit"])) {
         $name = $_POST['name'];
         $email = $_POST['email'];
-
+        $subject = $_POST['subject'];
         $message = $_POST['message'];
         $human = intval($_POST['human']);
         $from = 'Debate Website Contact Form'; 
         $to = 'ksharm01@gmail.com'; 
-        $subject = 'Message from Contact Demo ';
         
-        $body ="From: $name\n E-Mail: $email\n Message:\n $message";
+        $body ="From: $name\n Subject: $subject \n E-Mail: $email\n Message:\n $message";
         // Check if name has been entered
         if (!$_POST['name']) {
             $errName = 'Please enter your name';
@@ -119,7 +118,7 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="subject" class="col-sm-2 control-label">Subject?</label>
+                        <label for="subject" class="col-sm-2 control-label">Subject</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="subject" name="subject" placeholder="I'd Like To Join!">
                             <?php echo "<p class='text-danger'>$errHuman</p>";?>
