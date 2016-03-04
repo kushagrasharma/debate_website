@@ -13,6 +13,10 @@
         if (!$_POST['name']) {
             $errName = 'Please enter your name';
         }
+
+        if (!$_POST['subject']) {
+            $errsubject = 'Please enter your subject';
+        }
         
         // Check if email has been entered and is valid
         if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
@@ -28,7 +32,7 @@
             $errHuman = 'Your anti-spam is incorrect';
         }
 // If there are no errors, send the email
-if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
+if (!$errName && !$errSubject !$errEmail && !$errMessage && !$errHuman) {
     if (mail ($to, $subject, $body)) {
         $result='<div class="alert alert-success">Thank You! I will be in touch</div>';
     } else {
