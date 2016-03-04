@@ -2,7 +2,7 @@
     if (isset($_POST["submit"])) {
         $name = $_POST['name'];
         $email = $_POST['email'];
-        
+
         $message = $_POST['message'];
         $human = intval($_POST['human']);
         $from = 'Debate Website Contact Form'; 
@@ -119,9 +119,9 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="subject" class="col-sm-2 control-label">2 + 3 = ?</label>
+                        <label for="subject" class="col-sm-2 control-label">Subject?</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="human" name="human" placeholder="I'd Like To Join!">
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="I'd Like To Join!">
                             <?php echo "<p class='text-danger'>$errHuman</p>";?>
                         </div>
                     </div>
